@@ -5,3 +5,7 @@ export class Comment {
     console.log(`constructor model - id: ${this.id}`);
   }
 }
+
+export interface AddCommentDTO {
+  comment: string;
+}
