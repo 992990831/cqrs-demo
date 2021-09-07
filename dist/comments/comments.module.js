@@ -12,6 +12,7 @@ const cqrs_1 = require("@nestjs/cqrs");
 const comments_controller_1 = require("./comments.controller");
 const handlers_1 = require("./queries/handlers");
 const handlers_2 = require("./commands/handlers");
+const handlers_3 = require("./events/handlers");
 let CommentsModule = class CommentsModule {
 };
 CommentsModule = __decorate([
@@ -21,6 +22,7 @@ CommentsModule = __decorate([
         providers: [
             ...handlers_1.QueryHandlers,
             ...handlers_2.CommandHandlers,
+            ...handlers_3.EventHandlers,
         ],
     })
 ], CommentsModule);

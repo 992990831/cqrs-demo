@@ -1,11 +1,18 @@
-export class Comment {
+import { AggregateRoot } from '@nestjs/cqrs';
+import { CommentAddedEvent } from '../events/impl/comment-added.event';
+export class Comment extends AggregateRoot {
   private readonly id: string;
-  constructor(_id: string) {
-    this.id = _id;
-    console.log(`constructor model - id: ${this.id}`);
-  }
-}
+  private readonly comment: string;
 
-export interface AddCommentDTO {
-  comment: string;
+  constructor(_id: string, _comment?: string) {
+    super();
+    this.id = _id;
+    this.comment = _comment;
+    //console.log(`constructor model - id: ${this.id}`);
+  }
+
+  public DoSomething() {
+    // logic
+    this.apply(new CommentAddedEvent(this.id, this.comment));
+  } 
 }

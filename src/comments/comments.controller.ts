@@ -3,7 +3,7 @@ import { QueryBus, CommandBus } from '@nestjs/cqrs';
 import { Comment } from './models/comment.model';
 import { GetCommentQuery } from './queries/impl';
 import { AddCommentCommand } from './commands/impl/add-comment.command';
-import { AddCommentDTO } from './models/comment.model';
+import { AddCommentDTO } from './interface/add-comment.dto';
 
 @Controller('comments')
 export class CommentsController {
