@@ -1,3 +1,3 @@
-import { CommentAddedHandler } from './comment-added.handler';
+import { CommentAddedHandler, CommentAddedHandlerII } from './comment-added.handler';
 
-export const EventHandlers = [CommentAddedHandler];
+export const EventHandlers = [CommentAddedHandler, CommentAddedHandlerII];

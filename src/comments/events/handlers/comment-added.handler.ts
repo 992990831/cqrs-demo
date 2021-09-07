@@ -6,6 +6,15 @@ import { CommentAddedEvent } from '../impl/comment-added.event';
 export class CommentAddedHandler
   implements IEventHandler<CommentAddedEvent> {
   handle(event: CommentAddedEvent) {
-    console.log('CommentAddedEvent...');
+    console.log('from comment added event handler...');
+  }
+}
+
+
+@EventsHandler(CommentAddedEvent)
+export class CommentAddedHandlerII
+  implements IEventHandler<CommentAddedEvent> {
+  handle(event: CommentAddedEvent) {
+    console.log('from comment added event handler II...');
   }
 }
